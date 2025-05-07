@@ -6,12 +6,17 @@ import Header from "../../components/Header";
 import SearchBar from "../../components/SearchBar";
 import FeaturedMovies from "../../components/FeaturedMovies";
 import Genres from "../../components/Genres";
+import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 const Index = () => {
   return (
-    <SafeAreaView className="flex-1 bg-neutral-900">
-      <StatusBar style="light" />
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView
+      contentContainerStyle={{ paddingBottom: hp(10) }}
+      showsVerticalScrollIndicator={false}
+      className="bg-neutral-900"
+    >
+      <SafeAreaView>
+        <StatusBar style="light" />
         {/* Header Section */}
         <View>
           <Header />
@@ -29,8 +34,8 @@ const Index = () => {
         <View>
           <Genres />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ScrollView>
   );
 };
 
